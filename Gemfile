@@ -53,6 +53,8 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
+gem 'sorcery', '0.16.3'
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -63,3 +65,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
