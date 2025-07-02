@@ -1,3 +1,8 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>">
+    <%= message %>
+  </div>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-lg-8 mx-auto">
@@ -23,10 +28,10 @@
           <%= f.label :password_confirmation, class: "form-label" %>
           <%= f.password_field :password_confirmation, class: "form-control" %>
         </div>
-        <%= f.submit "登録", class: "btn btn-primary" %>
+        <%= f.submit t(".submit_create"), class: "btn btn-primary" %>
       <% end %>
-      <div class='text-center'>
-        <%= link_to 'ログインページへ', login_path %>
+      <div class="text-center">
+        <%= link_to t(".users_new_to_login_page"), login_path %>
       </div>
     </div>
   </div>

@@ -1,21 +1,22 @@
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>">
+    <%= message %>
+  </div>
+<% end %>
 <div class="top-wrapper">
   <div class="top-inner-text">
   <div class="text-center py-12 px-4">
   <!-- ロゴ + キャッチコピー -->
-  <h1 class="text-3xl md:text-5xl font-bold text-neutral mb-4">買い物リスト（仮）</h1>
+  <h1 class="text-3xl md:text-5xl font-bold text-neutral mb-4">Free Market</h1>
   <p class="text-lg md:text-xl text-gray-600 mb-4">予算を決めずに放り込め！</p>
+
   <!-- サインアップ + ログイン -->
-  <div class="flex-1">
-      <%= link_to "#", root_path, class: "text-2xl font-bold" %>
-    </div>
     <div class="flex-none space-x-2">
-        <%= link_to new_user_registration_path, class: "btn btn-outline" do %>
-          <i class="fa-solid fa-user-plus"></i>
-          <%= t('header.sign_up') %>
+        <%= link_to new_user_path, class: "relative h-12 overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2" do %>
+        <span class="relative"><%= t("header.sign_up") %></span>
         <% end %>
-        <%= link_to new_user_session_path, class: "btn btn-outline" do %>
-          <i class="fa-solid fa-right-to-bracket"></i>
-          <%= t('header.login') %>
+        <%= link_to login_path, class: "relative h-12 overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2" do %>
+        <span class="relative"><%= t("header.login") %></span>
         <% end %>
     </div>
   </div>
