@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   post "login", to: "user_sessions#create"
   delete "logout", to: "user_sessions#destroy"
   resources :products, only: %i[new create index show edit update destroy]
+  post "guest_login", to: "guest_sessions#create"
 end
