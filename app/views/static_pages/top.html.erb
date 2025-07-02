@@ -10,13 +10,13 @@
   <h1 class="text-3xl md:text-5xl font-bold text-neutral mb-4">Free Market</h1>
   <p class="text-lg md:text-xl text-gray-600 mb-4">予算を決めずに放り込め！</p>
 
-  <!-- サインアップ + ログイン -->
+  <!-- ログイン + ゲストログイン -->
     <div class="flex-none space-x-2">
-        <%= link_to new_user_path, class: "relative h-12 overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2" do %>
-        <span class="relative"><%= t("header.sign_up") %></span>
-        <% end %>
         <%= link_to login_path, class: "relative h-12 overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2" do %>
         <span class="relative"><%= t("header.login") %></span>
+        <% end %>
+        <%= link_to guest_login_path, data: { turbo_method: :post }, class: "relative h-12 overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2" do %>
+        <span class="relative"><%= t("header.guest_login") %></span>
         <% end %>
     </div>
   </div>
