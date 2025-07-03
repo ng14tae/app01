@@ -8,3 +8,7 @@ ja:
         last_name: 姓
         first_name: 名
         password: パスワード
+        password_confirmation: パスワード（確認用）
+      product:
+        title: 商品名
+        body: 理由
