@@ -46,3 +46,4 @@ ja:
       success: ユーザー登録が完了しました
       failure: ユーザー登録に失敗しました
   products:
+    title: 商品登録ページ
