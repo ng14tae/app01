@@ -25,9 +25,9 @@ class ProductsController < ApplicationController
   def update
     @product = current_user.products.find(params[:id])
     if @product.update(product_params)
-      redirect_to product_path(@product), success: t('defaults.flash_message.updated', item: Product.model_name.human)
+      redirect_to product_path(@product), success: t("defaults.flash_message.updated", item: Product.model_name.human)
     else
-      flash.now[:danger] = t('defaults.flash_message.not_updated', item: Product.model_name.human)
+      flash.now[:danger] = t("defaults.flash_message.not_updated", item: Product.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end
@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
   def destroy
     product = current_user.products.find(params[:id])
     product.destroy!
-    redirect_to products_path, success: t('defaults.deleted', item: Product.model_name.human), status: :see_other
+    redirect_to products_path, success: t("defaults.deleted", item: Product.model_name.human), status: :see_other
   end
 
   private
@@ -45,6 +45,6 @@ class ProductsController < ApplicationController
   end
 
   def not_authenticated
-    redirect_to login_path, danger: t('defaults.require_login') if current_user.nil?
+    redirect_to login_path, danger: t("defaults.require_login") if current_user.nil?
   end
 end
