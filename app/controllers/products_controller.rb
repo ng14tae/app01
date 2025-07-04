@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
+  def index
+    @products = includes(:user).page(params[:page])
+  end
+
   def new
     @product = Product.new
   end
