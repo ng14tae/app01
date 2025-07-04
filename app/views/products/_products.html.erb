@@ -1,0 +1,31 @@
+<div class="col-sm-12 col-lg-4 mb-3">
+<div id="product-id-<%= product.id %>">
+    <div class="card">
+    <%= image_tag product.product_image_url, class: "card-img-top", width: "300", height:"200" %>
+    <div class="card-body">
+        <div class="d-flex">
+        <h4 class="card-title">
+            <%= link_to product.title, product_path(product) %>
+        </h4>
+        <% if current_user.own?(product) %>
+        <div class='ms-auto'>
+            <%= link_to edit_product_path(product), id: "button-edit-#{product.id}" do %>
+            <i class="bi bi-pencil-fill"></i>
+            <% end %>
+            <%= link_to product_path(product), id: "button-delete-#{product.id}", data: { turbo_method: :delete, turbo_confirm: t("defaults.delete_confirm") } do %>
+            <i class="bi bi-trash-fill"></i>
+            <% end %>
+        </div>
+        <% else %>
+        <%= render 'bookmark_buttons', { product: product } %>
+        <% end %>
+        </div>
+        <ul class="list-inline">
+        <li><i class="bi bi-person"></i><%= product.user.decorate.full_name %></li>
+        <li><i class="bi bi-calendar"></i><%= l product.created_at, format: :short %></li>
+        </ul>
+        <p class="card-text"><%= product.body %></p>
+    </div>
+    </div>
+</div>
+</div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "static_pages#top"
+  root to: "static_pages#top" # /でstatic_pagesのtopアクションを表示
+  get "purchase/done", to: "purchase#done" # /purchase/doneでstatic_pagesのdoneアクションを表示
   resources :users, only: %i[new create]
   get "login", to: "user_sessions#new"
   post "login", to: "user_sessions#create"
