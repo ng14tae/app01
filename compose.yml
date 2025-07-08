@@ -14,7 +14,7 @@ services: # コンテナの定義開始
       interval: 10s # チェック間隔
       timeout: 5s # タイムアウト時間
       retries: 5 # リトライ回数
-      
+
   web: # Railsアプリケーションの設定
     build: # Dockerイメージのビルド設定
       context: .  # ビルドコンテキストはカレントディレクトリ

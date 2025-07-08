@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
   def index
-    @products = includes(:user).page(params[:page])
+    @products = Product.includes(:user)
   end
 
   def new
@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
   def show
     @product = Product.find(params[:id])
   end

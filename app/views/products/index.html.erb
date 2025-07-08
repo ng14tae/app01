@@ -13,10 +13,9 @@
             <div class="mb-3">商品がありません</div>
             <% end %>
         </div>
-        <%= paginate @products %>
         </div>
-        <%= link_to login_path, class: "relative h-12 overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2" do %>
-        <span class="relative"><%= t("header.login") %></span>
+        <%= link_to purchase_index_path, class: "relative h-12 overflow-hidden rounded bg-neutral-950 px-5 py-2.5 text-white transition-all duration-300 hover:bg-neutral-800 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2" do %>
+        <span class="relative"><%= t("purchase.done") %></span>
         <% end %>
     </div>
 </div>
