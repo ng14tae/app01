@@ -13,3 +13,6 @@ ja:
         body: 理由
       purchase:
         done: 購入！
+    menu:
+        product: 商品登録
+        mypage: マイページ
